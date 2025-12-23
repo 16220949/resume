@@ -70,22 +70,41 @@
       font-weight: 500;
     }
 
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
     .button {
       display: inline-block;
-      padding: 14px 32px;
+      padding: 14px 28px;
       background: linear-gradient(135deg, #F09D00 0%, #F09D00 100%);
       color: #ffffff;
       text-decoration: none;
       border-radius: 10px;
       font-weight: 600;
-      font-size: 16px;
+      font-size: 15px;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
       box-shadow: 0 6px 14px rgba(240, 157, 0, 0.3);
+    }
+
+    .button.secondary {
+      background: #fff;
+      color: #F09D00;
+      border: 2px solid #F09D00;
+      box-shadow: none;
     }
 
     .button:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 20px rgba(240, 157, 0, 0.35);
+    }
+
+    .button.secondary:hover {
+      box-shadow: 0 6px 14px rgba(240, 157, 0, 0.25);
     }
 
     .footer {
@@ -117,9 +136,15 @@
       <span class="tag">独立开发</span>
     </div>
 
-    <a href="./resume.pdf" class="button" download>
-      📄 下载我的 PDF 简历
-    </a>
+    <!-- 👇 关键在这里 -->
+    <div class="buttons">
+      <a href="./resume.pdf" target="_blank" class="button secondary">
+        👀 在线预览
+      </a>
+      <a href="./resume.pdf" download class="button">
+        📄 下载 PDF
+      </a>
+    </div>
 
     <div class="footer">
       © 2026 张徐 · 很高兴认识你 🙂
